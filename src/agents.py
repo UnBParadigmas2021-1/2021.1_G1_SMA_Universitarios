@@ -1,5 +1,7 @@
 from mesa import Agent
 
+from entities import Entity
+
 class Freelance(Agent):
 
     def __init__(self, unique_id, pos, model, is_available, countdown):
@@ -17,7 +19,7 @@ class Freelance(Agent):
                 self.countdown -= 1
 
 
-class Student(Agent):
+class Student(Entity):
     money = None
 
     def __init__(self, unique_id, pos, model, moore, money=None):
@@ -52,7 +54,7 @@ class Student(Agent):
             self.model.schedule.add(freshman)
 
 
-class College(Agent):
+class College(Entity):
 
     money = None
 
