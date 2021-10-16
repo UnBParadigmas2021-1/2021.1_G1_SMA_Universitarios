@@ -79,14 +79,14 @@ class CollegeStudent(Model):
             tipo_alun_matric = []
           
             for tipo_estudante in range(tipos_estudantes):
-                rand = self.random.randrange(2)%2 if tipos_estudantes < 3 else 0
-                print(rand)
-                print('heeeey')
-                print(rand == 0 and len(tipo_alun_matric) <= 3)
-                if rand == 0 and len(tipo_alun_matric) <= 3:
+                rand = self.random.randrange(2)%2
+                if rand == 0 and len(tipo_alun_matric) < 3:
                     tipo_alun_matric.append(tipo_estudante)
-            while len(tipo_alun_matric) <= 3:
-                tipo_alun_matric.append(tipo_alun_matric[0])
+            if len(tipo_alun_matric) == 0:
+                tipo_alun_matric = [self.random.randrange(1, tipos_estudantes,) -1]
+            elif len(tipo_alun_matric) < 3: 
+               while len(tipo_alun_matric) < 3:
+                   tipo_alun_matric.append(tipo_alun_matric[0])
             college = College(self.next_id(), (x, y), self, True, money, tipo_alun_matric)
             self.grid.place_agent(college, (x, y))
             self.schedule.add(college)

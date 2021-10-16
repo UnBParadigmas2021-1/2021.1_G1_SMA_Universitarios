@@ -32,10 +32,9 @@ def university_canvas(agent):
 
     elif type(agent) is College:
         def coresDoCollege(tipo): 
-            print(tipo)
-            return {0: "#b3e5fc", 1: "#8e24aa", 2: "#ffeb3b", 3:  "#4caf50", 4: "#ef5350"}[tipo],
-
-        colors = list(map(coresDoCollege,agent.tipos))
+            return {0: "#000", 1: "#8e24aa", 2: "#ffeb3b", 3:  "#4caf50", 4: "#ef5350"}[tipo],
+   
+        colors = list(map(coresDoCollege,agent.tipos)) 
 
         portrayal["Color"] = colors
         portrayal["Shape"] = "rect"
