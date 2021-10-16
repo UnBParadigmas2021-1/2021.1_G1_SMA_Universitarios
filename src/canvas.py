@@ -32,9 +32,19 @@ def university_canvas(agent):
         portrayal["h"] = 1
 
     elif type(agent) is College:
-        portrayal["Shape"] = "assets/fga.png"
-        portrayal["scale"] = 0.9
-        portrayal["Layer"] = 2
+        def coresDoCollege(tipo): 
+            print(tipo)
+            return {0: "#000", 1: "#8e24aa", 2: "#ffeb3b", 3:  "#4caf50", 4: "#ef5350"}[tipo],
+
+        colors = list(map(coresDoCollege,agent.tipos))
+        print(colors)
+
+        portrayal["Color"] = colors
+        portrayal["Shape"] = "rect"
+        portrayal["Filled"] = "true"
+        portrayal["Layer"] = 0
+        portrayal["w"] = 1
+        portrayal["h"] = 1
 
     elif type(agent) is Freelance:
         if agent.is_available:

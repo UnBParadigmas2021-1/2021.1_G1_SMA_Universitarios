@@ -68,7 +68,6 @@ class CollegeStudent(Model):
             y = self.random.randrange(self.height)
             money = self.random.randrange(2 * self.student_gain_from_wage)
             student = Student(self.next_id(), (x, y), self, True, money, tipo=i%tipos_estudantes)
-            print(i%tipos_estudantes)
             self.grid.place_agent(student, (x, y))
             self.schedule.add(student)
 
@@ -78,10 +77,12 @@ class CollegeStudent(Model):
             y = self.random.randrange(self.height)
             money = self.random.randrange(2 * self.college_gain_from_wage)
             tipo_alun_matric = []
+          
             for tipo_estudante in range(tipos_estudantes):
-                if self.random.randrange(2)%2 == 0:
+                rand = self.random.randrange(2)%2
+                if rand == 0 and len(tipo_alun_matric) <= 3:
                     tipo_alun_matric.append(tipo_estudante)
-            college = College(self.next_id(), (x, y), self, True, money,)
+            college = College(self.next_id(), (x, y), self, True, money, tipo_alun_matric)
             self.grid.place_agent(college, (x, y))
             self.schedule.add(college)
 
