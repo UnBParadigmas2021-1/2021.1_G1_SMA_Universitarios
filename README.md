@@ -14,7 +14,8 @@
 Utilizando como base o projeto [WolfSheep](https://github.com/projectmesa/mesa/tree/main/examples/wolf_sheep) que é um projeto de exemplo do framework mesa, desenvolvemos um pequeno simulador de ecossistema que tem como objetivo representar um aluno no final de semestre. Adaptamos o projeto para demonstrar um estudante que se movimenta procurando freelances para ganhar dinheiro, tudo isso enquanto tenta fugir dos trabalhos da faculdade no final de semestre, alem de adicionar especialmente o aspecto da concorrencia, na relacao dos trabalhos da faculdade concorrendo pelos tipos de estudantes.
 
 ## Screenshots
-Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcionamento.
+![screenshot1](screenshots/multiagentes.jpeg)
+![screenshot2](screenshots/multiagentes2.jpeg)
 
 ## Instalação 
 **Linguagens**: Python 3<br>
