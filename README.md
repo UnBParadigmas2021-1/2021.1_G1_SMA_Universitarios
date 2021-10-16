@@ -1,4 +1,4 @@
-# Final de Semestre
+# Universitarios no final de Semestre
 
 **Disciplina**: FGA0210 - PARADIGMAS DE PROGRAMAÇÃO - T01 <br>
 **Nro do Grupo**: 01<br>
@@ -29,7 +29,7 @@ Utilizando como base o projeto [WolfSheep](https://github.com/projectmesa/mesa/t
 
 
 ## Vídeo
-Adicione 1 ou mais vídeos com a execução do projeto.
+[Link para o video](https://youtu.be/ZAuHk9yG73U)
 
 ## Outros 
 Conforme foi mencionado anteriormente, foi utilizado um projeto como exemplo, entretanto tivemos como objetivo alem de adaptar o tema, adicionar o aspecto da concorrencia, pois os estudantes concorrem pelos freelances e as faculdades concorrem pelos tipos de estudantes.
