@@ -31,7 +31,7 @@ Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcioname
 Adicione 1 ou mais vídeos com a execução do projeto.
 
 ## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas a seguir.
+Conforme foi mencionado anteriormente, foi utilizado um projeto como exemplo, entretanto tivemos como objetivo alem de adaptar o tema, adicionar o aspecto da concorrencia, pois os estudantes concorrem pelos freelances e as faculdades concorrem pelos tipos de estudantes.
 
 ## Fontes
 [WolfSheep](https://github.com/projectmesa/mesa/tree/main/examples/wolf_sheep)
