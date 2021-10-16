@@ -1,6 +1,5 @@
 from mesa import Agent
-
-from entities import Entity
+from src.entities import Entity
 
 class Freelance(Agent):
 
@@ -18,13 +17,14 @@ class Freelance(Agent):
             else:
                 self.countdown -= 1
 
-
 class Student(Entity):
     money = None
+    tipo = 0
 
-    def __init__(self, unique_id, pos, model, moore, money=None):
+    def __init__(self, unique_id, pos, model, moore, money=None, tipo = 0,):
         super().__init__(unique_id, pos, model, moore=moore)
         self.money = money
+        self.tipo = tipo
 
     def step(self):
         self.random_move()
@@ -44,7 +44,7 @@ class Student(Entity):
                 self.model.schedule.remove(self)
                 paid_bills = False
 
-        if paid_bills and self.random.random() < self.model.student_start_work:
+        if paid_bills and self.random.random() < self.model.student_multiply:
             if self.model.freela:
                 self.money /= 2
             freshman = Student(
@@ -57,10 +57,12 @@ class Student(Entity):
 class College(Entity):
 
     money = None
+    tipos = [0,1,2,3]
 
-    def __init__(self, unique_id, pos, model, moore, money=None):
+    def __init__(self, unique_id, pos, model, moore, money=None, tipos = [0,1,2,3]):
         super().__init__(unique_id, pos, model, moore=moore)
         self.money = money
+        self.tipos = tipos
 
     def step(self):
         self.random_move()
@@ -71,16 +73,17 @@ class College(Entity):
         student = [obj for obj in this_cell if isinstance(obj, Student)]
         if len(student) > 0:
             student_to_eat = self.random.choice(student)
-            self.money += self.model.college_gain_from_wage
+            if student_to_eat.tipo in self.tipos: 
+                self.money += self.model.college_gain_from_wage
 
-            self.model.grid._remove_agent(self.pos, student_to_eat)
-            self.model.schedule.remove(student_to_eat)
+                self.model.grid._remove_agent(self.pos, student_to_eat)
+                self.model.schedule.remove(student_to_eat)
 
         if self.money < 0:
             self.model.grid._remove_agent(self.pos, self)
             self.model.schedule.remove(self)
         else:
-            if self.random.random() < self.model.college_start_work:
+            if self.random.random() < self.model.college_multiply:
                 self.money /= 2
                 cub = College(
                     self.model.next_id(), self.pos, self.model, self.moore, self.money

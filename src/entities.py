@@ -1,6 +1,5 @@
 from mesa import Agent
 
-
 class Entity(Agent):
 
     grid = None
