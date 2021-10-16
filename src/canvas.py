@@ -14,18 +14,17 @@ def university_canvas(agent):
 
     if type(agent) is Student:
         if agent.tipo == 0:
-            portrayal["Color"] = ["#000", "#000", "#000"]
+          portrayal["Shape"] = "assets/black_student.png"
         elif agent.tipo == 1:
-            portrayal["Color"] = ["#8e24aa", "#8e24aa", "#8e24aa"]
+            portrayal["Shape"] = "assets/pink_student.png"
         elif agent.tipo == 2:
-            portrayal["Color"] = ["#ffeb3b", "#ffeb3b", "#ffeb3b"]
+           portrayal["Shape"] = "assets/yellow_student.png"
         elif agent.tipo == 3:
-            portrayal["Color"] = ["#4caf50", "#4caf50", "#4caf50"]
+           portrayal["Shape"] = "assets/green_student.png"
         elif agent.tipo == 4:
-            portrayal["Color"] = ["#ef5350", "#ef5350", "#ef5350"]
+            portrayal["Shape"] = "assets/red_student.png"
         else:
-            portrayal["Color"] = ["#5c6bc0", "#5c6bc0", "#5c6bc0"]
-        portrayal["Shape"] = "rect"
+           portrayal["Shape"] = "assets/blue_student.png"
         portrayal["Filled"] = "true"
         portrayal["Layer"] = 0
         portrayal["w"] = 1
@@ -34,10 +33,9 @@ def university_canvas(agent):
     elif type(agent) is College:
         def coresDoCollege(tipo): 
             print(tipo)
-            return {0: "#000", 1: "#8e24aa", 2: "#ffeb3b", 3:  "#4caf50", 4: "#ef5350"}[tipo],
+            return {0: "#b3e5fc", 1: "#8e24aa", 2: "#ffeb3b", 3:  "#4caf50", 4: "#ef5350"}[tipo],
 
         colors = list(map(coresDoCollege,agent.tipos))
-        print(colors)
 
         portrayal["Color"] = colors
         portrayal["Shape"] = "rect"
@@ -67,6 +65,9 @@ canvas_element = CanvasGrid(university_canvas, 20, 20, 500, 500)
 model_params = {
     "initial_student": UserSettableParameter(
         "slider", "Quantidade inicial de estudantes", 100, 10, 300
+    ),
+     "tipos_estudantes": UserSettableParameter(
+        "slider", "Quantidade de tipos de estudantes", 3, 1, 5
     ),
     "initial_college": UserSettableParameter(
         "slider", "Quantidade de trabalho da faculdade", 50, 10, 300
