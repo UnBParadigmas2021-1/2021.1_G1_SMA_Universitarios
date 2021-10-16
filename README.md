@@ -23,8 +23,8 @@ Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcioname
 ## Uso 
 * Para rodar o projeto, e necessario ter o `framework Mesa` instalado.
 > Digite no terminal `pip3 install mesa` 
-* Para rodar o projeto, entre na pasta anterior na qual o projeto foi instalado.
-> Digite no terminal `mesa runserver 2021.1_G1_SMA_Universitarios`
+* Para rodar o projeto, entre na pasta do projeto.
+> Digite no terminal `mesa runserver`
 
 
 ## Vídeo
